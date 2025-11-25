@@ -58,7 +58,7 @@ h1 {
   opacity: 1;
   overflow: visible;
   z-index: 10;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .intro-box.hidden {
   position: absolute;

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 body {
-  position: absolute;
   background-color: #ffae00;
   margin: 0;
   padding-top: 30px;
@@ -40,13 +39,6 @@ h1 {
   color: #000;
 }
 
-.container {
-  max-width: 1500px;
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
 .intro-box {
   transition: opacity overflow 0.3s ease-in-out;
   position: relative;
@@ -58,7 +50,6 @@ h1 {
   opacity: 1;
   overflow: visible;
   z-index: 10;
-  margin-left: 20px;
 }
 .intro-box.hidden {
   position: absolute;

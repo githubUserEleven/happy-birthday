@@ -118,7 +118,7 @@ h1 {
 .balloons-container {
   position: absolute;
   top: 90px;
-  height: 500px;
+  height: 400px;
   width: 100%;
 }
 
@@ -241,7 +241,7 @@ h1 {
     transform: translateY(0) translateX(0);
   }
   100% {
-    transform: translateY(-450px) translateX(25px);
+    transform: translateY(-400px) translateX(25px);
   }
 }
 @keyframes flyUp3 {
@@ -249,7 +249,7 @@ h1 {
     transform: translateY(0) translateX(0);
   }
   100% {
-    transform: translateY(-500px) translateX(-50px);
+    transform: translateY(-350px) translateX(-50px);
   }
 }
 @keyframes flyUp4 {
@@ -257,7 +257,7 @@ h1 {
     transform: translateY(0) translateX(0);
   }
   100% {
-    transform: translateY(-500px) translateX(35px);
+    transform: translateY(-300px) translateX(35px);
   }
 }
 @keyframes flyUp5 {
@@ -273,7 +273,7 @@ h1 {
     transform: translateY(0) translateX(0);
   }
   100% {
-    transform: translateY(-480px) translateX(20px);
+    transform: translateY(-440px) translateX(20px);
   }
 }
 @keyframes flyUp7 {

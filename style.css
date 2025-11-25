@@ -1,0 +1,294 @@
+@charset "UTF-8";
+body {
+  position: absolute;
+  background-color: #ffae00;
+  margin: 0;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  color: #ff3c00;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+  display: block;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 50px;
+  padding: 10px;
+}
+.btn.btn-continue {
+  background-color: #ff9100;
+  border: 2px solid #ffd000;
+  color: #ff3c00;
+}
+.btn.btn-continue:hover {
+  color: #ff9100;
+  background-color: #ff5100;
+}
+.btn.btn-open {
+  background-color: #e7e7e7;
+  color: #000;
+}
+
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.intro-box {
+  transition: opacity overflow 0.3s ease-in-out;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  opacity: 1;
+  overflow: visible;
+  z-index: 10;
+}
+.intro-box.hidden {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  overflow: hidden;
+}
+.intro-box .btn {
+  margin: 0 auto;
+}
+
+.piece-of-paper {
+  position: relative;
+  background-color: #fff;
+  background: linear-gradient(white 20px, #c2c2c2 20px) 0 0/100% 21px;
+  height: 100%;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.07;
+  padding: 10px 90px 10px 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+.piece-of-paper.appear {
+  opacity: 1;
+  overflow: visible;
+}
+.piece-of-paper:after {
+  position: absolute;
+  top: 0;
+  right: 70px;
+  content: "";
+  background-color: red;
+  width: 1px;
+  height: 100%;
+}
+.piece-of-paper .btn-open {
+  position: relative;
+  margin: 0 auto 21px;
+  z-index: 2;
+}
+.piece-of-paper .wish-text {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+.piece-of-paper .wish-text.appear {
+  opacity: 1;
+  overflow: visible;
+}
+
+/* Контейнер для шариков */
+.balloons-container {
+  position: absolute;
+  top: 90px;
+  height: 500px;
+  width: 100%;
+}
+
+/* Базовые стили шарика */
+.balloon {
+  position: absolute;
+  bottom: -100px; /* Изначально скрыты внизу */
+  width: 50px;
+  height: 65px;
+  border-radius: 50%;
+  opacity: 0;
+  /* УБИРАЕМ анимации из обычного состояния */
+}
+
+/* Ниточка */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, #999, #666);
+}
+
+/* Цвета шариков */
+.balloon[data-color=red] {
+  background: radial-gradient(circle at 30% 25%, #ff6b6b, #ff4444, #cc0000);
+}
+
+.balloon[data-color=blue] {
+  background: radial-gradient(circle at 30% 25%, #6bcaff, #4488ff, #0066cc);
+}
+
+.balloon[data-color=green] {
+  background: radial-gradient(circle at 30% 25%, #6bff6b, #44ff44, #00cc00);
+}
+
+.balloon[data-color=purple] {
+  background: radial-gradient(circle at 30% 25%, #d96bff, #bb44ff, #9900cc);
+}
+
+.balloon[data-color=orange] {
+  background: radial-gradient(circle at 30% 25%, #ffb366, #ff8800, #cc6600);
+}
+
+.balloon[data-color=pink] {
+  background: radial-gradient(circle at 30% 25%, #ff66b2, #ff3399, #cc0066);
+}
+
+.balloon[data-color=yellow] {
+  background: radial-gradient(circle at 30% 25%, #ffff66, #ffff00, #cccc00);
+}
+
+.balloon[data-color=teal] {
+  background: radial-gradient(circle at 30% 25%, #66ffff, #00cccc, #009999);
+}
+
+/* Анимации ТОЛЬКО при активации */
+.balloons-launch .balloon:nth-child(1) {
+  left: 10%;
+  animation: flyUp1 4s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(2) {
+  left: 20%;
+  animation: flyUp2 3.5s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(3) {
+  left: 30%;
+  animation: flyUp3 4.5s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(4) {
+  left: 40%;
+  animation: flyUp4 3.8s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(5) {
+  left: 50%;
+  animation: flyUp5 4.2s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(6) {
+  left: 60%;
+  animation: flyUp6 3.7s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(7) {
+  left: 70%;
+  animation: flyUp7 4.3s ease-in-out forwards;
+  opacity: 1;
+}
+
+.balloons-launch .balloon:nth-child(8) {
+  left: 80%;
+  animation: flyUp8 3.9s ease-in-out forwards;
+  opacity: 1;
+}
+
+/* Ключевые кадры анимаций для всех 8 шариков */
+@keyframes flyUp1 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-500px) translateX(-40px);
+  }
+}
+@keyframes flyUp2 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-450px) translateX(25px);
+  }
+}
+@keyframes flyUp3 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-500px) translateX(-50px);
+  }
+}
+@keyframes flyUp4 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-500px) translateX(35px);
+  }
+}
+@keyframes flyUp5 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-400px) translateX(-25px);
+  }
+}
+@keyframes flyUp6 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-480px) translateX(20px);
+  }
+}
+@keyframes flyUp7 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-520px) translateX(30px);
+  }
+}
+@keyframes flyUp8 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-440px) translateX(40px);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@ const introText = document.querySelector(".intro-box");
 const btnOpen = document.querySelector("#open-text");
 const wisthPaper = document.querySelector(".piece-of-paper");
 const wishText = document.querySelector(".wish-text");
+const balloonsContainer = document.querySelector(".balloons-container");
 
 btnContinue.addEventListener("click", () => {
   introText.classList.add("hidden");
@@ -13,12 +14,9 @@ btnOpen.addEventListener("click", () => {
   wishText.classList.add("appear");
 });
 
-const launchBtn = btnOpen;
-const balloonsContainer = document.querySelector(".balloons-container");
-
-launchBtn.addEventListener("click", function () {
+btnOpen.addEventListener("click", function () {
   balloonsContainer.classList.add("balloons-launch");
-  launchBtn.innerText = "You can click again"
+  btnOpen.innerText = "You can click again";
   setTimeout(() => {
     balloonsContainer.classList.remove("balloons-launch");
   }, 5000);

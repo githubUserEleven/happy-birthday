@@ -1,5 +1,5 @@
-@charset "UTF-8";
 body {
+  position: absolute;
   background-color: #ffae00;
   margin: 0;
   padding-top: 30px;
@@ -39,9 +39,16 @@ h1 {
   color: #000;
 }
 
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .intro-box {
   transition: opacity overflow 0.3s ease-in-out;
-  position: relative;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +74,7 @@ h1 {
   background-color: #fff;
   background: linear-gradient(white 20px, #c2c2c2 20px) 0 0/100% 21px;
   height: 100%;
-  max-width: 210px;
+  max-width: 300px;
   width: 100%;
   margin: 0 auto;
   font-size: 20px;
@@ -106,29 +113,21 @@ h1 {
   overflow: visible;
 }
 
-/* Контейнер для шариков */
 .balloons-container {
   position: absolute;
   top: 90px;
-  left: 50%;
-    transform: translateX(-46%);
   height: 400px;
   width: 100%;
 }
-
-/* Базовые стили шарика */
-.balloon {
+.balloons-container .balloon {
   position: absolute;
-  bottom: -100px; /* Изначально скрыты внизу */
+  bottom: -100px;
   width: 50px;
   height: 65px;
   border-radius: 50%;
   opacity: 0;
-  /* УБИРАЕМ анимации из обычного состояния */
 }
-
-/* Ниточка */
-.balloon::after {
+.balloons-container .balloon::after {
   content: "";
   position: absolute;
   bottom: -30px;
@@ -138,90 +137,71 @@ h1 {
   height: 30px;
   background: linear-gradient(to bottom, #999, #666);
 }
-
-/* Цвета шариков */
-.balloon[data-color=red] {
+.balloons-container .balloon[data-color=red] {
   background: radial-gradient(circle at 30% 25%, #ff6b6b, #ff4444, #cc0000);
 }
-
-.balloon[data-color=blue] {
+.balloons-container .balloon[data-color=blue] {
   background: radial-gradient(circle at 30% 25%, #6bcaff, #4488ff, #0066cc);
 }
-
-.balloon[data-color=green] {
+.balloons-container .balloon[data-color=green] {
   background: radial-gradient(circle at 30% 25%, #6bff6b, #44ff44, #00cc00);
 }
-
-.balloon[data-color=purple] {
+.balloons-container .balloon[data-color=purple] {
   background: radial-gradient(circle at 30% 25%, #d96bff, #bb44ff, #9900cc);
 }
-
-.balloon[data-color=orange] {
+.balloons-container .balloon[data-color=orange] {
   background: radial-gradient(circle at 30% 25%, #ffb366, #ff8800, #cc6600);
 }
-
-.balloon[data-color=pink] {
+.balloons-container .balloon[data-color=pink] {
   background: radial-gradient(circle at 30% 25%, #ff66b2, #ff3399, #cc0066);
 }
-
-.balloon[data-color=yellow] {
+.balloons-container .balloon[data-color=yellow] {
   background: radial-gradient(circle at 30% 25%, #ffff66, #ffff00, #cccc00);
 }
-
-.balloon[data-color=teal] {
+.balloons-container .balloon[data-color=teal] {
   background: radial-gradient(circle at 30% 25%, #66ffff, #00cccc, #009999);
 }
-
-/* Анимации ТОЛЬКО при активации */
-.balloons-launch .balloon:nth-child(1) {
+.balloons-container .balloons-launch .balloon:nth-child(1) {
   left: 10%;
   animation: flyUp1 4s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(2) {
+.balloons-container .balloons-launch .balloon:nth-child(2) {
   left: 20%;
   animation: flyUp2 3.5s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(3) {
+.balloons-container .balloons-launch .balloon:nth-child(3) {
   left: 30%;
   animation: flyUp3 4.5s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(4) {
+.balloons-container .balloons-launch .balloon:nth-child(4) {
   left: 40%;
   animation: flyUp4 3.8s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(5) {
+.balloons-container .balloons-launch .balloon:nth-child(5) {
   left: 50%;
   animation: flyUp5 4.2s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(6) {
+.balloons-container .balloons-launch .balloon:nth-child(6) {
   left: 60%;
   animation: flyUp6 3.7s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(7) {
+.balloons-container .balloons-launch .balloon:nth-child(7) {
   left: 70%;
   animation: flyUp7 4.3s ease-in-out forwards;
   opacity: 1;
 }
-
-.balloons-launch .balloon:nth-child(8) {
+.balloons-container .balloons-launch .balloon:nth-child(8) {
   left: 80%;
   animation: flyUp8 3.9s ease-in-out forwards;
   opacity: 1;
 }
 
-/* Ключевые кадры анимаций для всех 8 шариков */
 @keyframes flyUp1 {
   0% {
     transform: translateY(0) translateX(0);

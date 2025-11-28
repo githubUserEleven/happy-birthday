@@ -161,42 +161,42 @@ h1 {
 .balloons-container .balloon[data-color=teal] {
   background: radial-gradient(circle at 30% 25%, #66ffff, #00cccc, #009999);
 }
-.balloons-container .balloons-launch .balloon:nth-child(1) {
+.balloons-container.balloons-launch .balloon:nth-child(1) {
   left: 10%;
   animation: flyUp1 4s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(2) {
+.balloons-container.balloons-launch .balloon:nth-child(2) {
   left: 20%;
   animation: flyUp2 3.5s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(3) {
+.balloons-container.balloons-launch .balloon:nth-child(3) {
   left: 30%;
   animation: flyUp3 4.5s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(4) {
+.balloons-container.balloons-launch .balloon:nth-child(4) {
   left: 40%;
   animation: flyUp4 3.8s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(5) {
+.balloons-container.balloons-launch .balloon:nth-child(5) {
   left: 50%;
   animation: flyUp5 4.2s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(6) {
+.balloons-container.balloons-launch .balloon:nth-child(6) {
   left: 60%;
   animation: flyUp6 3.7s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(7) {
+.balloons-container.balloons-launch .balloon:nth-child(7) {
   left: 70%;
   animation: flyUp7 4.3s ease-in-out forwards;
   opacity: 1;
 }
-.balloons-container .balloons-launch .balloon:nth-child(8) {
+.balloons-container.balloons-launch .balloon:nth-child(8) {
   left: 80%;
   animation: flyUp8 3.9s ease-in-out forwards;
   opacity: 1;
